@@ -1,6 +1,13 @@
-// TODO: map missing tokens to kickstartDS
-
 #editor {
+  .ͼ4 ::selection {
+    color: var(--ks-text-color-primary-interactive-active);
+    background-color: var(--ks-color-primary-alpha-3) !important;
+  }
+
+  //
+  // TODO: map missing tokens to kickstartDS
+  //
+
   /* over all fonts, sizes, and colors */
   --jse-font-family: var(--ks-font-family-ui);
   --jse-font-family-mono: var(--ks-font-family-mono);
@@ -89,7 +96,7 @@
   // --jse-selection-background-inactive-color: #e8e8e8;
   // --jse-hover-background-color: rgba(0, 0, 0, 0.06);
   // --jse-active-line-background-color: rgba(0, 0, 0, 0.06);
-  // --jse-search-match-background-color: #99ff7780;
+  --jse-search-match-background-color: var(--ks-color-primary-alpha-2);
 
   /* contents: section of collapsed items in an array */
   // --jse-collapsed-items-background-color: #f5f5f5;
