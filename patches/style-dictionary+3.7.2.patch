@@ -1,0 +1,26 @@
+diff --git a/node_modules/style-dictionary/lib/extend.js b/node_modules/style-dictionary/lib/extend.js
+index 0a8ed7a..6e552c0 100644
+--- a/node_modules/style-dictionary/lib/extend.js
++++ b/node_modules/style-dictionary/lib/extend.js
+@@ -11,8 +11,6 @@
+  * and limitations under the License.
+  */
+ 
+-require('json5/lib/register');
+-require.extensions[".jsonc"] = require("./utils/jsonc").register;
+ 
+ var combineJSON = require('./utils/combineJSON'),
+     deepExtend = require('./utils/deepExtend'),
+diff --git a/node_modules/style-dictionary/lib/utils/combineJSON.js b/node_modules/style-dictionary/lib/utils/combineJSON.js
+index 1b7329e..35522bb 100644
+--- a/node_modules/style-dictionary/lib/utils/combineJSON.js
++++ b/node_modules/style-dictionary/lib/utils/combineJSON.js
+@@ -11,8 +11,6 @@
+  * and limitations under the License.
+  */
+ 
+-require('json5/lib/register');
+-require.extensions[".jsonc"] = require("./jsonc").register;
+ 
+ var glob = require('glob'),
+   deepExtend = require('./deepExtend'),

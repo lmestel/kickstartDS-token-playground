@@ -1,0 +1,17 @@
+diff --git a/node_modules/postcss-colormin/src/index.js b/node_modules/postcss-colormin/src/index.js
+index 6d2c553..f2cb400 100644
+--- a/node_modules/postcss-colormin/src/index.js
++++ b/node_modules/postcss-colormin/src/index.js
+@@ -110,11 +110,7 @@ function pluginCreator(config = {}) {
+     prepare(result) {
+       /** @type {typeof result.opts & browserslist.Options} */
+       const resultOptions = result.opts || {};
+-      const browsers = browserslist(null, {
+-        stats: resultOptions.stats,
+-        path: __dirname,
+-        env: resultOptions.env,
+-      });
++      const browsers = [];
+ 
+       const cache = new Map();
+       const options = addPluginDefaults(config, browsers);

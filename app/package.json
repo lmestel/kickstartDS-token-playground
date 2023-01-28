@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && parcel build --target app",
+    "start": "parcel src/index.html"
+  },
+  "browserslist": "> 0.5%, last 2 versions, last 2 years, not dead",
+  "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@kickstartds/base": "^2.0.3",
+    "@swc/helpers": "^0.4.14",
+    "@types/react-dom": "^18.0.10",
+    "@parcel/transformer-sass": "2.8.3",
+    "deepmerge": "^4.2.2",
+    "parcel": "^2.8.3",
+    "punycode": "^1.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "style-dictionary-worker": "*",
+    "typescript": "^4.9.4",
+    "vanilla-jsoneditor": "^0.14.3"
+  },
+  "targets": {
+    "app": {
+      "source": "src/index.html",
+      "distDir": "./dist",
+      "includeNodeModules": true,
+      "context": "browser",
+      "outputFormat": "esmodule",
+      "optimize": false
+    }
+  }
+}
