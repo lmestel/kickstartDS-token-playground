@@ -7,11 +7,13 @@
   ],
   "scripts": {
     "build": "yarn workspace style-dictionary-worker run build && yarn workspace app run build",
+    "deploy": "netlify deploy --prod --site 9b512689-5496-40cb-a6bf-63548ed1ac62",
     "prepare": "patch-package"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.8.3",
     "buffer": "^5.5.0",
+    "netlify-cli": "^12.10.0",
     "patch-package": "^6.5.1",
     "punycode": "^1.4.1",
     "querystring-es3": "^0.2.1",
