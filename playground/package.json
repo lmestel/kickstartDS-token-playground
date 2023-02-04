@@ -1,9 +1,9 @@
 {
-  "name": "app",
+  "name": "playground",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rm -rf dist && parcel build --target app",
+    "build": "rm -rf dist && parcel build --target playground",
     "start": "parcel src/index.html"
   },
   "browserslist": "> 0.5%, last 2 versions, last 2 years, not dead",
@@ -23,7 +23,7 @@
     "vanilla-jsoneditor": "^0.14.3"
   },
   "targets": {
-    "app": {
+    "playground": {
       "source": "src/index.html",
       "distDir": "./dist",
       "includeNodeModules": true,

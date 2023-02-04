@@ -2,13 +2,13 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "app",
+    "playground",
     "worker"
   ],
   "scripts": {
-    "build": "yarn workspace style-dictionary-worker run build && yarn workspace app run build",
+    "build": "yarn workspace style-dictionary-worker run build && yarn workspace playground run build",
     "deploy": "netlify deploy --prod --site 9b512689-5496-40cb-a6bf-63548ed1ac62",
-    "start": "serve app/dist",
+    "start": "serve playground/dist",
     "prepare": "patch-package"
   },
   "devDependencies": {
