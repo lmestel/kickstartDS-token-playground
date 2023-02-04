@@ -8,16 +8,10 @@
   "scripts": {
     "build": "yarn workspace style-dictionary-worker run build && yarn workspace playground run build",
     "deploy": "netlify deploy --prod --site 9b512689-5496-40cb-a6bf-63548ed1ac62",
-    "start": "serve playground/dist",
-    "prepare": "patch-package"
+    "start": "serve playground/dist"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.8.3",
-    "buffer": "^5.5.0",
     "netlify-cli": "^12.10.0",
-    "patch-package": "^6.5.1",
-    "punycode": "^1.4.1",
-    "querystring-es3": "^0.2.1",
     "serve": "^14.2.0",
     "url": "^0.11.0"
   }

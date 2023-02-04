@@ -5,26 +5,20 @@
   "author": "Lukas Mestel",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c rollup.config.mjs"
+    "build": "node build/index.js"
   },
   "browserslist": "> 0.5%, last 2 versions, last 2 years, not dead",
   "devDependencies": {
     "@kickstartds/style-dictionary": "^2.0.0",
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-inject": "^5.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.4.0",
     "ansi-colors-browserify": "^4.1.2",
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "constants-browserify": "^1.0.0",
+    "esbuild": "^0.17.5",
     "events": "^3.3.0",
     "memfs": "^3.4.13",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
-    "query-string": "^8.1.0",
-    "rollup": "^3.12.0",
     "stream-browserify": "^3.0.0",
     "style-dictionary": "^3.7.2",
     "util": "^0.12.5"
