@@ -1,0 +1,62 @@
+@use "./utils/breakpoints";
+
+.content {
+  max-width: var(--l-section--content-width-wide);
+  margin: auto;
+
+  @include breakpoints.tablet {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  @include breakpoints.desktop {
+    max-width: calc(var(--l-section--content-width-wide) + 30rem);
+  }
+
+  &__preview {
+    @include breakpoints.tablet {
+      flex: 1;
+    }
+  }
+
+  &__editor {
+    display: contents;
+
+    @include breakpoints.tablet {
+      display: block;
+      width: 20rem;
+    }
+
+    @include breakpoints.desktop {
+      display: block;
+      width: 30rem;
+    }
+
+    &-inner {
+      padding: 1rem;
+      position: sticky;
+      bottom: 0;
+      height: 50vh;
+      max-width: 25rem;
+
+      @include breakpoints.tablet {
+        top: 1rem;
+        height: calc(100vh - 2rem);
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.visually-hidden,
+[aria-hidden="true"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}

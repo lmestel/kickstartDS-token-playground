@@ -1,0 +1,17 @@
+@use "./jse-theme-kds";
+
+.jsoneditor {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.jsoneditor,
+.jse-main,
+.jse-text-mode,
+.jse-tree-mode,
+.jse-table-mode,
+.jse-contents,
+.jse-table-mode-welcome {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}

@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require("path");
 
 const removeJson5Plugin = {
   name: "remove json5",

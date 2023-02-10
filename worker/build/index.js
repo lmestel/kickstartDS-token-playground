@@ -11,6 +11,11 @@ const { removeJson5Plugin } = require("./removeJson5Plugin");
     platform: "browser",
     format: "esm",
     minify: true,
+    inject: ["./build/processShim.js"],
+    define: {
+      global: "self",
+      __dirname: "''",
+    },
     alias: {
       chalk: "ansi-colors-browserify",
       assert: "assert",
