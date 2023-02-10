@@ -1,4 +1,4 @@
-import StyleDictionary from "style-dictionary";
+import StyleDictionary, { DesignTokens } from "style-dictionary";
 import cssKdsVariablesFormat from "@kickstartds/style-dictionary/formats/css/kds-variables";
 import { vol } from "memfs";
 
@@ -19,8 +19,7 @@ const platforms = {
     ],
   },
 };
-
-self.addEventListener("message", (event) => {
+export const buildStyleDictionary = (tokens: DesignTokens) => {
   try {
     console.group("style-dictionary");
     console.time("⏱");
@@ -28,15 +27,12 @@ self.addEventListener("message", (event) => {
     StyleDictionary.extend({
       format,
       platforms,
-      tokens: event.data,
+      tokens,
     }).buildAllPlatforms();
 
-    const allFiles = vol.toJSON();
-    const contents = Object.values(allFiles).join("\n\n");
-
-    self.postMessage(contents);
+    return vol.toJSON();
   } finally {
     console.timeEnd("⏱");
     console.groupEnd();
   }
-});
+};

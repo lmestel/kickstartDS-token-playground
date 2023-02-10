@@ -1,7 +1,7 @@
 .jsoneditor {
   .ͼ4 ::selection {
     color: var(--ks-text-color-primary-interactive-active);
-    background-color: var(--ks-color-primary-alpha-3) !important;
+    background-color: var(--ks-color-primary-alpha-7) !important;
   }
 
   //
@@ -9,7 +9,7 @@
   //
 
   /* over all fonts, sizes, and colors */
-  --jse-font-family: var(--ks-font-family-ui);
+  --jse-font-family: var(--ks-font-family-interface);
   --jse-font-family-mono: var(--ks-font-family-mono);
   // --jse-font-size-mono: 14px;
   // --jse-font-size: 16px;
@@ -78,14 +78,14 @@
   // --jse-context-menu-tip-color: inherit;
 
   /* contents: json key and values */
-  // --jse-key-color: #1a1a1a;
+  --jse-key-color: var(--ks-text-color-default);
   // --jse-value-color: #1a1a1a;
   // --jse-value-color-number: #ee422e;
   // --jse-value-color-boolean: #ff8c00;
   // --jse-value-color-null: #004ed0;
-  --jse-value-color-string: var(--ks-color-primary-alpha-9);
+  --jse-value-color-string: var(--ks-color-primary-alpha-1);
   // --jse-value-color-url: #008000;
-  // --jse-delimiter-color: rgba(0, 0, 0, 0.38);
+  --jse-delimiter-color: var(--ks-color-fg-alpha-3);
   // --jse-edit-outline: 2px solid #656565;
 
   /* contents: selected or hovered */
@@ -96,7 +96,7 @@
   // --jse-selection-background-inactive-color: #e8e8e8;
   // --jse-hover-background-color: rgba(0, 0, 0, 0.06);
   // --jse-active-line-background-color: rgba(0, 0, 0, 0.06);
-  --jse-search-match-background-color: var(--ks-color-primary-alpha-2);
+  --jse-search-match-background-color: var(--ks-color-primary-alpha-8);
 
   /* contents: section of collapsed items in an array */
   // --jse-collapsed-items-background-color: #f5f5f5;

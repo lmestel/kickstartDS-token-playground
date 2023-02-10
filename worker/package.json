@@ -9,11 +9,12 @@
   },
   "browserslist": "> 0.5%, last 2 versions, last 2 years, not dead",
   "devDependencies": {
-    "@kickstartds/style-dictionary": "^2.0.0",
+    "@kickstartds/style-dictionary": "2.0.1-canary.1250.5506.0",
     "ansi-colors-browserify": "^4.1.2",
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "constants-browserify": "^1.0.0",
+    "deepmerge": "^4.3.0",
     "esbuild": "^0.17.5",
     "events": "^3.3.0",
     "memfs": "^3.4.13",
@@ -21,6 +22,7 @@
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
     "style-dictionary": "^3.7.2",
-    "util": "^0.12.5"
+    "util": "^0.12.5",
+    "worky-turkey": "^1.0.1"
   }
 }

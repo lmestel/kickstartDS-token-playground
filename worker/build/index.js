@@ -5,7 +5,7 @@ const { removeJson5Plugin } = require("./removeJson5Plugin");
 
 (async () => {
   await esbuild.build({
-    entryPoints: ["index.js"],
+    entryPoints: ["index.ts"],
     outdir: "dist",
     bundle: true,
     platform: "browser",
