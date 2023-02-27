@@ -22,6 +22,7 @@ body {
   display: flex;
   overflow: hidden;
   position: relative;
+  flex: 1;
 
   $previewShrunkScale: 0.25;
 
