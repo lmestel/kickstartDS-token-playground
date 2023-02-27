@@ -1,0 +1,74 @@
+// TODO: use kds tokens
+
+.SelectTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font: var(--ks-font-interface-s);
+  height: 35px;
+  gap: 5px;
+  background-color: var(--ks-background-color-interface-interactive);
+  color: var(--ks-text-color-interface-interactive);
+  box-shadow: 0 2px 8px var(--ks-color-fg-alpha-8);
+
+  &:hover {
+    background-color: var(--ks-background-color-interface-interactive-hover);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px var(--ks-color-primary);
+    background-color: var(--ks-background-color-interface-interactive-active);
+  }
+}
+
+.SelectContent {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.SelectViewport {
+  padding: 5px;
+}
+
+.SelectItem {
+  font-size: 13px;
+  line-height: 1;
+  color: var(--ks-color-primary);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
+
+  &[data-highlighted] {
+    outline: none;
+    background-color: var(--ks-color-primary);
+    color: var(--ks-color-primary-inverted);
+  }
+}
+
+.SelectItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SelectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  background-color: white;
+  color: var(--ks-color-primary);
+  cursor: default;
+}

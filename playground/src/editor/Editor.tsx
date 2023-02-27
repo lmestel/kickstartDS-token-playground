@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import { TokenContextProvider } from "../token/TokenContext";
 import "./Editor.scss";
 
 const JsonEditor = lazy(() =>
@@ -10,12 +9,10 @@ const JsonEditor = lazy(() =>
 
 export const Editor = () => {
   return (
-    <TokenContextProvider>
-      <div className="editor">
-        <Suspense>
-          <JsonEditor />
-        </Suspense>
-      </div>
-    </TokenContextProvider>
+    <div className="editor">
+      <Suspense>
+        <JsonEditor />
+      </Suspense>
+    </div>
   );
 };

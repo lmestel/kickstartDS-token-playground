@@ -1,0 +1,25 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__toolbar {
+    padding: var(--ks-spacing-inset-squish-xs);
+    border-bottom: 1px solid var(--ks-color-fg-alpha-8);
+  }
+
+  &__iframe-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    background-color: var(--ks-color-fg-alpha-9);
+  }
+
+  &__iframe {
+    flex: 1;
+    height: 100%;
+    margin: auto;
+    transition: 0.2s;
+  }
+}

@@ -1,0 +1,28 @@
+// TODO: use kds tokens
+
+.Toggle {
+  background-color: var(--ks-background-color-default);
+  color: var(--mauve11);
+  height: 35px;
+  width: 35px;
+  border-radius: 4px;
+  display: flex;
+  font-size: 15px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px var(--ks-color-fg-alpha-8);
+
+  &:hover {
+    background-color: var(--ks-color-primary-alpha-9);
+  }
+
+  &[data-state="on"] {
+    background-color: var(--ks-color-primary-alpha-7);
+    color: var(--ks-color-primary);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px var(--ks-color-primary);
+  }
+}

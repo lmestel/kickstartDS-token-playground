@@ -1,55 +1,77 @@
+@use "sass:math";
 @use "./utils/breakpoints";
 
+body {
+  background-color: var(--ks-background-color-default);
+  color: var(--ks-text-color-default);
+  font: var(--ks-font-interface-s);
+}
+
+#root {
+  display: flex;
+  flex-direction: column-reverse;
+  position: fixed;
+  inset: 0;
+
+  @include breakpoints.phone {
+    flex-direction: column;
+  }
+}
+
 .content {
-  max-width: var(--l-section--content-width-wide);
-  margin: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
 
-  @include breakpoints.tablet {
-    display: flex;
-    flex-direction: row-reverse;
+  $previewShrunkScale: 0.25;
+
+  &__pane {
+    overflow: auto;
+    background-color: var(--ks-background-color-default);
   }
 
-  @include breakpoints.desktop {
-    max-width: calc(var(--l-section--content-width-wide) + 30rem);
-  }
+  &__editor-pane {
+    width: min((1 - $previewShrunkScale) * 100vw, 35rem);
 
-  &__preview {
-    @include breakpoints.tablet {
-      flex: 1;
-    }
-  }
+    @include breakpoints.phone {
+      width: min(50vw, 30rem);
 
-  &__editor {
-    display: contents;
-
-    @include breakpoints.tablet {
-      display: block;
-      width: 20rem;
-    }
-
-    @include breakpoints.desktop {
-      display: block;
-      width: 30rem;
-    }
-
-    &-inner {
-      padding: 1rem;
-      position: sticky;
-      bottom: 0;
-      height: 50vh;
-      max-width: 25rem;
-
-      @include breakpoints.tablet {
-        top: 1rem;
-        height: calc(100vh - 2rem);
-        max-width: 100%;
+      &--hidden {
+        width: 0;
       }
+    }
+  }
+
+  &__preview-pane {
+    position: absolute;
+    inset: 0;
+    transform-origin: top right;
+    flex-grow: 1;
+    transition: 0.2s;
+
+    @include breakpoints.phone {
+      position: static;
+    }
+
+    &--shrunk {
+      min-height: math.div(1, $previewShrunkScale) * 100%;
+      transform: scale($previewShrunkScale);
     }
   }
 }
 
-.visually-hidden,
-[aria-hidden="true"] {
+.toolbar {
+  border-top: 1px solid var(--ks-color-fg-alpha-8);
+  padding: var(--ks-spacing-inset-squish-xs);
+  z-index: 1;
+
+  @include breakpoints.phone {
+    border-top: 0;
+    border-bottom: 1px solid var(--ks-color-fg-alpha-8);
+  }
+}
+
+.visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: auto;

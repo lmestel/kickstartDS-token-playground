@@ -16,17 +16,20 @@ import { expose } from "worky-turkey";
 const TokenContext = createContext<{
   setTokens: Dispatch<SetStateAction<any>>;
   tokens: any;
+  cssString?: string;
 }>({
   setTokens() {},
   tokens: initialTokens,
 });
 
 export const TokenContextProvider: FC<PropsWithChildren> = (props) => {
+  const [cssString, setCssString] = useState<string>();
   const styleTag = useRef(document.createElement("style"));
   const worker = useRef(
     expose(
       {
         updateCss(cssString: string) {
+          setCssString(cssString);
           styleTag.current.textContent = cssString;
         },
       },
@@ -48,7 +51,12 @@ export const TokenContextProvider: FC<PropsWithChildren> = (props) => {
     worker.current.updateBrandingTokens(tokens);
   }, [tokens]);
 
-  return <TokenContext.Provider {...props} value={{ tokens, setTokens }} />;
+  return (
+    <TokenContext.Provider
+      {...props}
+      value={{ tokens, setTokens, cssString }}
+    />
+  );
 };
 
 export const useToken = () => useContext(TokenContext);
