@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
 import { JSONEditor, toJSONContent } from "vanilla-jsoneditor";
-import type { DesignTokens } from "style-dictionary";
-import { useToken } from "../token/TokenContext";
 import "./JsonEditor.scss";
 
-export const JsonEditor = () => {
-  const { tokens, setTokens } = useToken();
+export const JsonEditor: FC<{
+  initialData: any;
+  setData: Dispatch<SetStateAction<any>>;
+}> = ({ initialData, setData }) => {
   const refContainer = useRef<HTMLDivElement>(null);
   const refEditor = useRef<JSONEditor | null>(null);
 
@@ -16,11 +16,11 @@ export const JsonEditor = () => {
     refEditor.current = new JSONEditor({
       target: refContainer.current,
       props: {
-        content: { json: tokens },
+        content: { json: initialData },
         onChange(updatedContent) {
           const { json } = toJSONContent(updatedContent);
           if (json) {
-            setTokens(json as DesignTokens);
+            setData(json);
           }
         },
       },

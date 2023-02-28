@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { useToken } from "../token/TokenContext";
 import "./Editor.scss";
 
 const JsonEditor = lazy(() =>
@@ -8,10 +9,11 @@ const JsonEditor = lazy(() =>
 );
 
 export const Editor = () => {
+  const { tokens, setTokens } = useToken();
   return (
     <div className="editor">
       <Suspense>
-        <JsonEditor />
+        <JsonEditor initialData={tokens} setData={setTokens} />
       </Suspense>
     </div>
   );
