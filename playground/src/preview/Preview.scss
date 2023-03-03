@@ -1,3 +1,5 @@
+@use "../utils/layout";
+
 .preview {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
 
   &__toolbar {
     padding: var(--ks-spacing-inset-squish-xs);
-    border-bottom: 1px solid var(--ks-color-fg-alpha-8);
+    border-bottom: layout.$border;
   }
 
   &__iframe-container {

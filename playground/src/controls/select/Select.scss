@@ -1,4 +1,5 @@
 // TODO: use kds tokens
+@use "../vars";
 
 .SelectTrigger {
   display: inline-flex;
@@ -7,7 +8,7 @@
   border-radius: 4px;
   padding: 0 15px;
   font: var(--ks-font-interface-s);
-  height: 35px;
+  height: vars.$controlHeight;
   gap: 5px;
   background-color: var(--ks-background-color-interface-interactive);
   color: var(--ks-text-color-interface-interactive);

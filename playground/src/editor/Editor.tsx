@@ -1,5 +1,8 @@
 import { lazy, Suspense } from "react";
+import { CodeIcon } from "@radix-ui/react-icons";
+import { Tabs } from "../controls/tabs/Tabs";
 import { useToken } from "../token/TokenContext";
+import { ColorsEditor } from "./colors/ColorsEditor";
 import "./Editor.scss";
 
 const JsonEditor = lazy(() =>
@@ -9,12 +12,38 @@ const JsonEditor = lazy(() =>
 );
 
 export const Editor = () => {
-  const { tokens, setTokens } = useToken();
+  const tokenContext = useToken();
   return (
     <div className="editor">
-      <Suspense>
-        <JsonEditor initialData={tokens} setData={setTokens} />
-      </Suspense>
+      <Tabs
+        tabs={[
+          {
+            trigger: "Colors",
+            content: <ColorsEditor {...tokenContext} />,
+          },
+          {
+            trigger: "Typography",
+            content: "Hello Typography!",
+          },
+
+          {
+            trigger: "Surfaces",
+            content: "Hello Surfaces!",
+          },
+
+          {
+            trigger: <CodeIcon aria-label="Raw JSON code" />,
+            content: (
+              <Suspense>
+                <JsonEditor
+                  initialData={tokenContext.tokens}
+                  setData={tokenContext.setTokens}
+                />
+              </Suspense>
+            ),
+          },
+        ]}
+      />
     </div>
   );
 };

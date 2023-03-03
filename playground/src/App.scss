@@ -1,5 +1,8 @@
 @use "sass:math";
 @use "./utils/breakpoints";
+@use "./utils/layout";
+
+$previewShrunkScale: 0.25;
 
 body {
   background-color: var(--ks-background-color-default);
@@ -24,15 +27,13 @@ body {
   position: relative;
   flex: 1;
 
-  $previewShrunkScale: 0.25;
-
   &__pane {
-    overflow: auto;
     background-color: var(--ks-background-color-default);
   }
 
   &__editor-pane {
     width: min((1 - $previewShrunkScale) * 100vw, 35rem);
+    border-right: layout.$border;
 
     @include breakpoints.phone {
       width: min(50vw, 30rem);
@@ -49,9 +50,10 @@ body {
     transform-origin: top right;
     flex-grow: 1;
     transition: 0.2s;
+    min-height: 100%;
 
     @include breakpoints.phone {
-      position: static;
+      position: relative;
     }
 
     &--shrunk {
@@ -59,16 +61,39 @@ body {
       transform: scale($previewShrunkScale);
     }
   }
-}
 
-.toolbar {
-  border-top: 1px solid var(--ks-color-fg-alpha-8);
-  padding: var(--ks-spacing-inset-squish-xs);
-  z-index: 1;
+  &__editor-toggle {
+    $bottom: 0.5rem;
+    $left: -1px;
 
-  @include breakpoints.phone {
-    border-top: 0;
-    border-bottom: 1px solid var(--ks-color-fg-alpha-8);
+    position: absolute;
+    bottom: $bottom;
+    z-index: 1;
+    left: -1px;
+    transform-origin: bottom left;
+    background-color: var(--ks-background-color-default);
+    color: var(--ks-color-primary);
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: layout.$border;
+    border-left: 0;
+
+    &:hover {
+      background-color: var(--ks-color-primary-to-bg-9);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 1px var(--ks-color-primary);
+    }
+
+    .content__preview-pane--shrunk & {
+      transform: scale(math.div(1, $previewShrunkScale));
+      bottom: math.div(1, $previewShrunkScale) * $bottom;
+      left: math.div(1, $previewShrunkScale) * $left + $left;
+    }
   }
 }
 

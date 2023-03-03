@@ -13,11 +13,13 @@ import initialTokens from "@kickstartds/style-dictionary/branding-token.json";
 import Worker from "./worker.ts?worker";
 import { expose } from "worky-turkey";
 
-const TokenContext = createContext<{
+export interface ITokenContext {
   setTokens: Dispatch<SetStateAction<any>>;
   tokens: any;
   cssString?: string;
-}>({
+}
+
+const TokenContext = createContext<ITokenContext>({
   setTokens() {},
   tokens: initialTokens,
 });
